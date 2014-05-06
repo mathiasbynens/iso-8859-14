@@ -2,7 +2,7 @@
 
 _iso-8859-14_ is a robust JavaScript implementation of [the iso-8859-14 character encoding as defined by the Encoding Standard](http://encoding.spec.whatwg.org/#iso-8859-14).
 
-This encoding is known under the following names: iso-8859-14, iso8859-14, iso885914, and iso885914.
+This encoding is known under the following names: iso-8859-14, iso8859-14, and iso885914.
 
 ## Installation
 
