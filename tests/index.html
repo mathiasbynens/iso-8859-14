@@ -8,28 +8,47 @@
 	<body>
 		<div id="qunit"></div>
 		<script src="../node_modules/qunitjs/qunit/qunit.js"></script>
-		<script src="../iso885914.js"></script>
+		<script src="../iso-8859-14.js"></script>
 		<script>
-			// populate `QUnit.urlParams`
 			QUnit.urlParams.norequire = /[?&]norequire=true(?:&|$)/.test(location.search);
 
-			// load tests.js if not using require.js
 			document.write(QUnit.urlParams.norequire
 				? '<script src="tests.js"><\/script>'
 				: '<script src="../node_modules/requirejs/require.js"><\/script>'
 			);
 		</script>
 		<script>
-			window.require && require({
-				'baseUrl': '../node_modules/requirejs/',
-				'urlArgs': 't=' + (+new Date),
-				'paths': {
-					'iso885914': '../../iso885914'
+			(function(root) {
+				if (!root.require) {
+					return;
 				}
-			},
-			['iso885914'], function(iso885914) {
-				require(['tests.js']);
-			});
+				QUnit.config.autostart = false;
+
+				requirejs.config({
+					'baseUrl': './',
+					'urlArgs': 't=' + (+new Date),
+					'waitSeconds': 0,
+					'packages': [
+						{
+							'name': 'iso-8859-14',
+							'location': '..',
+							'main': 'iso-8859-14'
+						},
+						{
+							'name': 'tests',
+							'location': '.',
+							'main': 'tests'
+						}
+					]
+				});
+
+				require(['iso-8859-14'], function(iso885914) {
+					root.iso885914 = iso885914;
+					require(['tests'], function() {
+						QUnit.start();
+					});
+				});
+			}(this));
 		</script>
 	</body>
 </html>
