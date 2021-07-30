@@ -1,4 +1,4 @@
-# iso-8859-14 [![iso-8859-14 on npm](https://img.shields.io/npm/v/iso-8859-14)](https://www.npmjs.com/package/iso-8859-14)
+# iso-8859-14 [![Build status](https://github.com/mathiasbynens/iso-8859-14/workflows/run-checks/badge.svg)](https://github.com/mathiasbynens/iso-8859-14/actions?query=workflow%3Arun-checks) [![iso-8859-14 on npm](https://img.shields.io/npm/v/iso-8859-14)](https://www.npmjs.com/package/iso-8859-14)
 
 _iso-8859-14_ is a robust JavaScript implementation of [the iso-8859-14 character encoding as defined by the Encoding Standard](https://encoding.spec.whatwg.org/#iso-8859-14).
 
